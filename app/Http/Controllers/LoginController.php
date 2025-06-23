@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Auth;
 
 use App\Models\User;
 class LoginController extends Controller
@@ -20,7 +22,7 @@ class LoginController extends Controller
      */
     public function create()
     {
-        //
+        return view('login');
     }
 
     /**
@@ -28,13 +30,27 @@ class LoginController extends Controller
      */
     public function store(Request $request)
     {
-        //
+         $request->validate([
+        'email' => 'required|email',
+        'password' => 'required',
+    ]);
+
+    $user = User::where('email', $request->email)->first();
+
+    if (!$user || !Hash::check($request->password, $user->password)) {
+        return back()->with('error', 'Correo o contraseña incorrectos');
+    }
+
+    Auth::login($user);
+
+    //return redirect()->route('login.success')->with('success', '¡Inicio de sesión exitoso!');
+     return redirect()->route('login.success')->with('success', 'Usuario logueado exitosamente');
     }
 
     /**
      * Display the specified resource.
      */
-   /* public function show($name, $lastName, $email, $password, $carne, $major_id)
+   public function show($name, $lastName, $email, $password, $carne, $major_id)
     {
 
        // $nuevoUsuario = new User();
@@ -48,15 +64,6 @@ class LoginController extends Controller
         ]);
 
         return "Usuario $name creado con exito";
-    }*/
-
-    public function show($major_name)
-    {
-        $newMajor = \App\Models\Major::create([
-            'major_name' => $major_name
-        ]);
-
-        return  $major_name ;
     }
 
     /**
