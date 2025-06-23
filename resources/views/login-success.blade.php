@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Éxito</title>
+    <title>Logueado</title>
 </head>
 <body>
     @if (session('success'))
