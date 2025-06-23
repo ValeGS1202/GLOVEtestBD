@@ -11,9 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tb_schedule_course', function (Blueprint $table) {
+        Schema::create('schedule_courses', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('schedule_id')->constrained('tb_schedules')->onDelete('cascade'); //el constrained es para decir que se relaciona con la tabla users
+            $table->foreignId('schedule_id')->constrained('schedules')->onDelete('cascade'); //el constrained es para decir que se relaciona con la tabla users
             $table->string('course_code');
             $table->string('name');
             $table->string('creadits');
@@ -32,6 +32,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tb_schedule_course');
+        Schema::dropIfExists('schedule_courses');
     }
 };

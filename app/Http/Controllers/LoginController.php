@@ -34,7 +34,7 @@ class LoginController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show($name, $lastName, $email, $password, $carne, $major_id)
+   /* public function show($name, $lastName, $email, $password, $carne, $major_id)
     {
 
        // $nuevoUsuario = new User();
@@ -48,16 +48,16 @@ class LoginController extends Controller
         ]);
 
         return "Usuario $name creado con exito";
-    }
+    }*/
 
-   /* public function show($major_name)
+    public function show($major_name)
     {
         $newMajor = \App\Models\Major::create([
             'major_name' => $major_name
         ]);
 
         return  $major_name ;
-    }*/
+    }
 
     /**
      * Show the form for editing the specified resource.

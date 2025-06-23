@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tb_course_taken', function (Blueprint $table) {
+        Schema::create('courses_taken', function (Blueprint $table) {
             $table->id();
           //  $table->foreignId('course_id')->constrained('tb_courses')->onDelete('cascade')->nullable(); //todavia no existe tabla de cursos
             $table->string('status');
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tb_course_taken');
+        Schema::dropIfExists('courses_taken');
     }
 };

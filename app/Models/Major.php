@@ -10,6 +10,6 @@ class Major extends Model
         'major_name'
     ];
 
-    protected $table = 'tb_major';
+    protected $table = 'majors';
 
 }

@@ -20,7 +20,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('carne', 6)->nullable();
             //$table->foreignId('major_id')->constrained('tb_major')->onDelete('cascade');
-            $table->foreignId('major_id')->nullable()->constrained('tb_major')->onDelete('set null');
+            $table->foreignId('major_id')->nullable()->constrained('majors')->onDelete('set null');
            // $table->rememberToken();
             $table->timestamps();
         });

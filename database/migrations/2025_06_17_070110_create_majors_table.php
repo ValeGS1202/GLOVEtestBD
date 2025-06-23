@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('tb_major', function (Blueprint $table) {
+        Schema::create('majors', function (Blueprint $table) {
             $table->id();
             $table->string("major_name");
             $table->timestamps();
@@ -23,6 +23,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('tb_major');
+        Schema::dropIfExists('majors');
     }
 };
