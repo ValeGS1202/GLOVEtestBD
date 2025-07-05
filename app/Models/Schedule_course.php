@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Schedule_Course extends Model
 {
     protected $fillable = [
+        'schedule_id',
         'course_code',
         'name',
         'credits',

@@ -13,7 +13,7 @@ return new class extends Migration
     {
         Schema::create('schedule_courses', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('schedule_id')->constrained('schedules')->onDelete('cascade')->nullable(); //el constrained es para decir que se relaciona con la tabla users
+            $table->foreignId('schedule_id')->nullable()->constrained('schedules')->onDelete('cascade');
             $table->string('course_code');
             $table->string('name');
             $table->integer('credits');

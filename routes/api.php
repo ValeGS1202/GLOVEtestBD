@@ -11,3 +11,5 @@ Route::get('/user', function (Request $request) {
 })->middleware('auth:sanctum');
 
 Route::get('/cursos', [Schedule_CourseController::class, 'all']);
+
+Route::post('/cursos', [Schedule_CourseController::class, 'store']);
