@@ -3,11 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Models\User;
-use Illuminate\Support\Facades\Hash;
 
-
-class RegisterController extends Controller
+class ScheduleController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -22,7 +19,7 @@ class RegisterController extends Controller
      */
     public function create()
     {
-         return view('register');
+        //
     }
 
     /**
@@ -30,19 +27,7 @@ class RegisterController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            "email" => "required|email|unique:users,email",
-            "password" => "required|confirmed"
-        ]);
-
-        User::create([
-        'email' => $request->input('email'),
-        'password' => Hash::make($request->input('password')),
-    ]);
-
-        return redirect()->route('login.form')->with('success', 'Usuario registrado exitosamente');
-        //return redirect('/login')->back()->with('success', 'Usuario registrado exitosamente');
-       // return redirect()->route('login.create')->with('success', 'Usuario registrado exitosamente');
+        //
     }
 
     /**

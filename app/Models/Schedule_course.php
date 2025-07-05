@@ -9,7 +9,7 @@ class Schedule_Course extends Model
     protected $fillable = [
         'course_code',
         'name',
-        'creadits',
+        'credits',
         'group',
         'schedule_list',
         'format',
