@@ -47,6 +47,15 @@ Si un curso tiene varios grupos, repórtalos como objetos distintos (uno por gru
 
 Si los requisitos o correquisitos aparecen en líneas posteriores, asócialos al curso correcto por su sigla.
 
+Los LH o lista de horarios deben de venir de la siguiente manera:
+["K:13:00-16:50, V 13:00-16:50"] aunque sean dos dias distintos con las mismas horas, deben de venir separados.
+
+Este es un ejemplo de como NO debe de venir el LH: L, J 08:00-11:50
+
+Los dias no deben de venir separados por comas, sino que deben de venir con sus horarios, asi K:13:00-16:50, V 13:00-16:50.
+
+Si en el PDF encuentras un horario que venga de esa forma, interpretalo y corrigelo.
+
 Devuelve solamente el JSON, sin texto adicional. ejemplo del json esperado:
 [
  {
